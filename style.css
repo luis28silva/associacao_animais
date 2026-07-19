@@ -1,0 +1,642 @@
+/* =====================================================
+     TOKENS — troque as cores/fontes aqui se quiser ajustar
+     ===================================================== */
+:root {
+  --verde-escuro: #1f3a2e; /* headers, nav, footer */
+  --verde-medio: #2e5240;
+  --dourado: #d9a441; /* CTA principal */
+  --coral: #e07856; /* seção doação, detalhe */
+  --creme: #fbf4e7; /* fundo geral */ 
+  --branco: #ffffff;
+  --texto: #26302b;
+  --texto-claro: #6b7a72;
+
+  --fonte-display: "Fraunces", serif;
+  --fonte-corpo: "Work Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  color: var(--texto);
+  background: var(--creme);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fonte-display);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--verde-escuro);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  font-family: var(--fonte-corpo);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+  cursor: pointer;
+  border: none;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn-primario {
+  background: var(--dourado);
+  color: var(--verde-escuro);
+  box-shadow: 0 6px 20px rgba(217, 164, 65, 0.35);
+}
+.btn-secundario {
+  background: transparent;
+  color: var(--branco);
+  border: 1.5px solid var(--branco);
+}
+.btn-outline-escuro {
+  background: transparent;
+  color: var(--verde-escuro);
+  border: 1.5px solid var(--verde-escuro);
+}
+
+/* =====================
+     NAV
+     ===================== */
+header {
+  background: var(--verde-escuro);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.logo-texto {
+  font-family: var(--fonte-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--branco);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-ponto {
+  color: var(--dourado);
+  font-size: 0.6rem;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+.nav-links a {
+  color: var(--branco);
+  font-weight: 500;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+.nav-links a:hover {
+  opacity: 1;
+  color: var(--dourado);
+}
+
+/* =====================
+     HERO
+     ===================== */
+.hero {
+  background: var(--verde-escuro);
+  color: var(--branco);
+  padding: 90px 0 110px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 40px;
+}
+.hero-conteudo {
+  max-width: 560px;
+  position: relative;
+  z-index: 2;
+}
+.hero-ilustracao {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+}
+
+.hero-ilustracao img {
+  width: 100%;
+  max-width: 1000px; /* aumenta esse valor pra crescer mais */
+  height: auto;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  color: var(--branco);
+  margin: 16px 0 20px;
+}
+.hero p {
+  font-size: 1.1rem;
+  color: #dce6df;
+  margin-bottom: 32px;
+  max-width: 480px;
+}
+.hero-botoes {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 56px;
+  flex-wrap: wrap;
+}
+.stat-num {
+  font-family: var(--fonte-display);
+  font-size: 2rem;
+  color: var(--dourado);
+  font-weight: 700;
+}
+.stat-label {
+  font-size: 0.85rem;
+  color: #b7c4bb;
+}
+
+/* =====================
+     SOBRE
+     ===================== */
+.sobre {
+  padding: 100px 0;
+}
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.sobre-texto h2 {
+  font-size: 2.2rem;
+  margin: 10px 0 20px;
+}
+.sobre-texto p {
+  color: var(--texto-claro);
+  margin-bottom: 16px;
+}
+.sobre-imagem {
+  background: var(--verde-medio);
+  aspect-ratio: 4/5;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  /* TROCAR: substituir por <img src="foto-real.jpg"> */
+}
+
+/* =====================
+     FAIXA ILUSTRADA — cena do passeio
+     ===================== */
+.faixa-passeio {
+  background: var(--creme);
+  padding: 40px 0 70px;
+  overflow: hidden;
+}
+.faixa-passeio .container {
+  text-align: center;
+}
+.faixa-legenda {
+  font-family: var(--fonte-display);
+  font-size: 1.3rem;
+  color: var(--verde-escuro);
+  margin-bottom: 24px;
+}
+
+.faixa-placeholder {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* =====================
+     ANIMAIS PARA ADOÇÃO
+     ===================== */
+.adocao {
+  background: var(--branco);
+  padding: 100px 0;
+}
+.secao-titulo {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 56px;
+}
+.secao-titulo h2 {
+  font-size: 2.2rem;
+  margin: 10px 0 12px;
+}
+.secao-titulo p {
+  color: var(--texto-claro);
+}
+
+.grid-animais {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* card estilo "plaquinha de coleira" — elemento de assinatura */
+.card-animal {
+  background: var(--creme);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+.card-animal:hover {
+  transform: translateY(-4px);
+}
+.card-foto {
+  aspect-ratio: 1/1;
+  background: var(--verde-medio);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  /* TROCAR: substituir por foto real de cada animal */
+}
+.card-info {
+  padding: 20px;
+  position: relative;
+}
+.tag-nome {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--dourado);
+  color: var(--verde-escuro);
+  font-weight: 700;
+  font-family: var(--fonte-display);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+.card-detalhes {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.pill {
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--branco);
+  color: var(--texto-claro);
+  border: 1px solid #e4dfd3;
+}
+.card-animal .btn {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.85rem;
+}
+
+/* =====================
+     COMO AJUDAR
+     ===================== */
+.ajudar {
+  padding: 100px 0;
+}
+.grid-ajudar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.card-ajudar {
+  background: var(--verde-escuro);
+  color: var(--branco);
+  padding: 40px 32px;
+  border-radius: 20px;
+}
+.card-ajudar .icone {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  display: block;
+}
+.card-ajudar h3 {
+  color: var(--branco);
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+.card-ajudar p {
+  color: #c9d6cd;
+  font-size: 0.92rem;
+  margin-bottom: 24px;
+}
+
+/* =====================
+     DOAÇÃO PIX
+     ===================== */
+.pix {
+  background: var(--coral);
+  padding: 80px 0;
+  color: var(--branco);
+}
+.pix-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.pix-texto h2 {
+  color: var(--branco);
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+.pix-texto p {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 420px;
+}
+.pix-card {
+  background: var(--branco);
+  color: var(--texto);
+  border-radius: 18px;
+  padding: 28px;
+  min-width: 280px;
+  text-align: center;
+}
+.pix-qr {
+  width: 160px;
+  height: 160px;
+  background: var(--creme);
+  margin: 0 auto 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--texto-claro);
+  font-size: 0.8rem;
+  /* TROCAR: colocar QR code real do Pix aqui */
+}
+.pix-chave {
+  background: var(--creme);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  word-break: break-all;
+}
+
+/* =====================
+     CONTATO
+     ===================== */
+.contato {
+  background: var(--branco);
+  padding: 100px 0;
+}
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+.contato-info h2 {
+  font-size: 2.2rem;
+  margin: 10px 0 20px;
+}
+.contato-info p {
+  color: var(--texto-claro);
+  margin-bottom: 24px;
+}
+.contato-canais {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.canal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+}
+.canal .icone {
+  width: 40px;
+  height: 40px;
+  background: var(--creme);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+input,
+textarea {
+  font-family: var(--fonte-corpo);
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1.5px solid #e4dfd3;
+  background: var(--creme);
+  font-size: 0.95rem;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--dourado);
+}
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* =====================
+     FOOTER
+     ===================== */
+footer {
+  background: var(--verde-escuro);
+  color: #b7c4bb;
+  padding: 48px 0 24px;
+}
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+}
+.footer-logo {
+  font-family: var(--fonte-display);
+  font-size: 1.2rem;
+  color: var(--branco);
+}
+.footer-social {
+  display: flex;
+  gap: 16px;
+}
+.footer-social a {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-creditos {
+  text-align: center;
+  font-size: 0.82rem;
+}
+.footer-creditos a {
+  color: var(--dourado);
+}
+
+/* =====================
+     RESPONSIVO
+     ===================== */
+@media (max-width: 860px) {
+  logo {
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .logo img {
+    height: 40px;
+    margin-top: 2px;
+  }
+  .logo-texto {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+  .hero-ilustracao img {
+  max-width: px;
+  }
+
+   .container {
+    padding: 0 16px;
+  }
+  .nav-links {
+    display: none;
+  } /* TODO: trocar por menu hamburguer */
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-ilustracao {
+    order: -1;
+    min-height: 260px;
+  }
+  .hero-conteudo {
+    max-width: 100%;
+  }
+  .sobre-grid,
+  .contato-grid {
+    grid-template-columns: 1fr;
+  }
+  .sobre-imagem {
+    order: -1;
+  }
+  .grid-animais {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-ajudar {
+    grid-template-columns: 1fr;
+  }
+  .pix-box {
+    justify-content: center;
+    text-align: center;
+  }
+  .hero-stats {
+    gap: 28px;
+  }
+  .faixa-passeio svg {
+    min-width: 900px;
+  }
+  .faixa-passeio {
+    overflow-x: auto;
+  }
+}
+@media (max-width: 560px) {
+  .grid-animais {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* acessibilidade: foco visível */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--dourado);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
