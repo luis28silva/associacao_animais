@@ -154,6 +154,22 @@ nav {
 }
 
 /* =====================
+     BOTÃO MOBILE
+     ===================== */
+
+
+#btn-mobile {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--branco);
+  cursor: pointer;
+  position: relative;
+  z-index: 1000;
+}
+
+/* =====================
      HERO
      ===================== */
 .hero {
@@ -652,10 +668,7 @@ footer {
      RESPONSIVO
      ===================== */
 @media (max-width: 860px) {
-  logo {
-    align-items: flex-start;
-    gap: 10px;
-  }
+ 
   .logo img {
     height: 40px;
     margin-top: 2px;
@@ -671,9 +684,7 @@ footer {
   .container {
     padding: 0 16px;
   }
-  .nav-links {
-    display: none;
-  } /* TODO: trocar por menu hamburguer */
+  
   .hero-grid {
     grid-template-columns: 1fr;
   }
@@ -711,6 +722,50 @@ footer {
     overflow-x: auto;
   }
 }
+
+@media (max-width: 768px) {
+  #btn-mobile {
+    display: block;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    background: var(--creme);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 100px 32px;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    color: var(--verde-escuro);
+    font-size: 1.1rem;
+  }
+
+  .nav-links::after {
+    content: "🐶";
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+  }
+}
+
 @media (max-width: 560px) {
   .grid-animais {
     grid-template-columns: 1fr;
