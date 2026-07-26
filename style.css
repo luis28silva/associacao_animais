@@ -157,7 +157,6 @@ nav {
      BOTÃO MOBILE
      ===================== */
 
-
 #btn-mobile {
   display: none;
   background: none;
@@ -181,9 +180,8 @@ nav {
 }
 .hero-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 0.8fr 1.1fr;
   align-items: center;
-  gap: 40px;
 }
 .hero-conteudo {
   max-width: 560px;
@@ -200,7 +198,7 @@ nav {
 
 .hero-ilustracao img {
   width: 100%;
-  max-width: 1000px; /* aumenta esse valor pra crescer mais */
+  max-width: 1020px; /* aumenta esse valor pra crescer mais */
   height: auto;
 }
 
@@ -241,8 +239,9 @@ nav {
    SOBRE
    ===================== */
 .sobre {
-  padding: 100px 0;
+  padding: 50px 0;
   text-align: center;
+  background: #fcefcf;
 }
 .sobre h2 {
   font-size: 2.2rem;
@@ -253,6 +252,12 @@ nav {
   max-width: 700px;
   margin: 0 auto 16px;
 }
+
+.passeio {
+  width: 400px;
+  margin: 40px auto 0;
+}
+
 /* =====================
    EQUIPE
    ===================== */
@@ -318,29 +323,6 @@ nav {
   opacity: 0.8;
 }
 
-/* =====================
-     FAIXA ILUSTRADA — cena do passeio
-     ===================== */
-.faixa-passeio {
-  background: var(--creme);
-  padding: 40px 0 70px;
-  overflow: hidden;
-}
-.faixa-passeio .container {
-  text-align: center;
-}
-.faixa-legenda {
-  font-family: var(--fonte-display);
-  font-size: 1.3rem;
-  color: var(--verde-escuro);
-  margin-bottom: 24px;
-}
-
-.faixa-placeholder {
-  width: 100%;
-  max-width: 980px;
-  margin: 0 auto;
-}
 
 /* =====================
      ANIMAIS PARA ADOÇÃO
@@ -668,7 +650,17 @@ footer {
      RESPONSIVO
      ===================== */
 @media (max-width: 860px) {
- 
+    .quebra-mobile {
+    display: block;
+  }
+
+  .logo-texto {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+  .hero {
+    padding-top: 20px; /* reduz esse valor até ficar do jeito que você quer */
+  }
   .logo img {
     height: 40px;
     margin-top: 2px;
@@ -684,7 +676,7 @@ footer {
   .container {
     padding: 0 16px;
   }
-  
+
   .hero-grid {
     grid-template-columns: 1fr;
   }
