@@ -3,7 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Associação [NOME] — Adote, Ajude, Transforme</title>
+    <title>Associação Amigos dos Animais — Adote, Ajude, Transforme</title>
+    <link rel="icon" type="image/x-icon" href="imagens/favicon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="imagens/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="imagens/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="imagens/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="imagens/favicon/site.webmanifest" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -23,6 +42,15 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="preloader">
+      <div class="preloader-spinner">
+        <img
+          src="imagens/logos/animais2.png"
+          alt="Carregando"
+          class="preloader-logo"
+        />
+      </div>
+    </div>
     <header>
       <div class="container">
         <nav>
@@ -88,7 +116,6 @@
       </div>
     </section>
 
-  
     <section class="sobre" id="sobre">
       <div class="container">
         <span class="eyebrow">Nossa história</span>
@@ -105,7 +132,7 @@
           deixado pra trás. Cada adoção bem-sucedida é uma vitória que nos
           motiva a continuar.
         </p>
-        <img src="imagens/geral/passeio_2.png" class="passeio" alt="">
+        <img src="imagens/geral/passeio_2.webp" class="passeio" alt="" />
       </div>
     </section>
 
@@ -120,46 +147,46 @@
         <div class="equipe-grid">
           <div class="equipe-card">
             <div class="foto-blob">
-              <img src="imagens/geral/Karen_Kaefer.jpeg" alt="Karen Kaefer" />
+              <img src="imagens/geral/karen.jpeg" alt="Karen Kaefer" />
             </div>
-            <p class="equipe-nome">Karen Kaefer</p>
+            <p class="equipe-nome"><span>Karen</span></p>
           </div>
 
           <div class="equipe-card">
             <div class="foto-blob">
               <img
-                src="imagens/geral/Fabiana _Magnago_Rocha.jpeg"
+                src="imagens/geral/fabiana.jpeg"
                 alt="Fabiana Magnago Rocha"
               />
             </div>
-            <p class="equipe-nome">Fabiana Magnago Rocha</p>
+            <p class="equipe-nome"><span>Fabiana</span></p>
           </div>
 
           <div class="equipe-card">
             <div class="foto-blob">
               <img
-                src="imagens/geral/Francieli_Henrich_Jacobsen.jpeg"
+                src="imagens/geral/francieli.jpeg"
                 alt="Francieli Henrich Jacobsen"
               />
             </div>
-            <p class="equipe-nome">Francieli Henrich Jacobsen</p>
+            <p class="equipe-nome"><span>Francieli</span></p>
           </div>
 
           <div class="equipe-card">
             <div class="foto-blob">
-              <img src="imagens/geral/Nice_Closs.jpeg" alt="Nice Closs" />
+              <img src="imagens/geral/nice.jpeg" alt="Nice Closs" />
             </div>
-            <p class="equipe-nome">Nice Closs</p>
+            <p class="equipe-nome"><span>Nice</span></p>
           </div>
 
           <div class="equipe-card">
             <div class="foto-blob">
               <img
-                src="imagens/geral/Valdoni_Rodrigues_Rocha.jpeg"
+                src="imagens/geral/valdoni.jpeg"
                 alt="Valdoni Rodrigues Rocha"
               />
             </div>
-            <p class="equipe-nome">Valdoni Rodrigues Rocha</p>
+            <p class="equipe-nome"><span>Valdoni</span></p>
           </div>
         </div>
       </div>
@@ -179,7 +206,7 @@
           <!-- TROCAR: repetir este bloco para cada animal, com foto e dados reais -->
           <div class="card-animal">
             <div class="card-foto">
-              <img src="imagens/animais/dog_1.webp" alt="" />
+              <img src="imagens/animais/lobinha.webp" alt="" />
             </div>
             <div class="card-info">
               <span class="tag-nome">🐾 Lobinha</span>
@@ -193,7 +220,7 @@
           </div>
           <div class="card-animal">
             <div class="card-foto">
-              <img src="imagens/animais/dog_2.webp" alt="" />
+              <img src="imagens/animais/duquesa.webp" alt="" />
             </div>
             <div class="card-info">
               <span class="tag-nome">🐾 Duquesa</span>
@@ -207,7 +234,7 @@
           </div>
           <div class="card-animal">
             <div class="card-foto">
-              <img src="imagens/animais/dog_3.webp" alt="" />
+              <img src="imagens/animais/capuccino.webp" alt="" />
             </div>
             <div class="card-info">
               <span class="tag-nome">🐾 Cappucino</span>
@@ -221,9 +248,7 @@
           </div>
         </div>
         <div class="ver-todos">
-          <a href="adocao.html" class="btn btn-primario"
-            >Ver todos os animais</a
-          >
+          <a href="adocao.html" class="btn-secundario">Ver todos os animais</a>
         </div>
       </div>
     </section>
@@ -240,18 +265,20 @@
             <h3>Adote</h3>
             <p>
               Abra sua casa pra um animal que precisa de amor e um lugar seguro
-              pra viver.
+              pra viver. Muitos deles já estão vacinados, castrados e prontos
+              pra se adaptar à sua rotina.
             </p>
-            <a href="#adocao" class="btn btn-secundario">Ver disponíveis</a>
+            <a href="#adocao" class="btn-card-ajudar">Ver disponíveis</a>
           </div>
           <div class="card-ajudar">
             <div class="icone-circulo"><span class="icone">💛</span></div>
             <h3>Doe</h3>
             <p>
               Rações, medicamentos e cuidados veterinários dependem diretamente
-              das doações.
+              das doações. Qualquer valor ajuda a manter o tratamento e o
+              bem-estar de quem está sob nossos cuidados.
             </p>
-            <a href="#pix" class="btn btn-secundario">Doar via Pix</a>
+            <a href="#pix" class="btn-card-ajudar">Doar via Pix</a>
           </div>
           <div class="card-ajudar">
             <div class="icone-circulo"><span class="icone">📣</span></div>
@@ -259,9 +286,10 @@
             <h3>Divulgue</h3>
             <p>
               Compartilhe nas redes, seja voluntário em eventos ou ajude a
-              encontrar lares temporários.
+              encontrar lares temporários. Cada divulgação aumenta as chances de
+              um bichinho encontrar uma família.
             </p>
-            <a href="#contato" class="btn btn-secundario">Quero ajudar</a>
+            <a href="#contato" class="btn-card-ajudar">Quero ajudar</a>
           </div>
         </div>
       </div>
@@ -278,6 +306,11 @@
             Qualquer valor ajuda a manter os animais resgatados até encontrarem
             uma família.
           </p>
+
+          <div class="selo-transparencia">
+            <i class="fa-solid fa-shield-heart"></i>
+            100% revertido pros animais · ONG registrada
+          </div>
         </div>
         <div class="pix-card">
           <div class="pix-qr">
@@ -287,7 +320,7 @@
             />
           </div>
           <div class="pix-chave">
-            <!-- TROCAR: chave Pix real -->CNPJ: 11.364.009/0001-06
+            <!-- TROCAR: chave Pix real -->11.364.009/0001-06
           </div>
           <button
             class="btn btn-primario"
@@ -306,18 +339,27 @@
           <span class="eyebrow">Fale com a gente</span>
           <h2>Contato</h2>
           <p>Dúvidas sobre adoção, doação ou parcerias? Manda uma mensagem.</p>
-          <div class="contato-canais">
-            <div class="canal">
-              <span class="icone">📱</span> WhatsApp: (51) 9XXXX-XXXX
-            </div>
-            <div class="canal">
-              <span class="icone">📷</span> Instagram: @associacao
-            </div>
-            <div class="canal">
-              <span class="icone">📍</span> Dois Irmãos, RS
-            </div>
+          <div class="canal">
+            <a href="https://wa.me/5551995019977" target="_blank" class="canal">
+              <span class="icone"><i class="fa-brands fa-whatsapp"></i></span>
+              WhatsApp: (51) 99501-9977
+            </a>
+          </div>
+          <div class="canal">
+            <a
+              href="https://instagram.com/animaisdedoisirmaos"
+              target="_blank"
+              class="canal"
+              ><span class="icone"><i class="fa-brands fa-instagram"></i></span
+              >Instagram: @animaisdedoisirmaos</a
+            >
+          </div>
+          <div class="canal">
+            <span class="icone"><i class="fa-solid fa-location-dot"></i></span>
+            Dois Irmãos, RS
           </div>
         </div>
+
         <div class="contato-form">
           <!-- TROCAR: action do FormSubmit com o email real, igual usado nos outros projetos -->
           <form action="https://formsubmit.co/SEU-EMAIL-AQUI" method="POST">
@@ -344,13 +386,26 @@
     <footer>
       <div class="container">
         <div class="footer-grid">
-          <div class="footer-logo">Assoc. Nome</div>
+          <div class="footer-logo">Associação Amigos dos Animais</div>
           <div class="footer-social">
-            <a href="#" aria-label="Instagram">📷</a>
-            <a href="#" aria-label="WhatsApp">📱</a>
+            <a
+              href="https://instagram.com/animaisdedoisirmaos"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="https://wa.me/5551995019977"
+              target="_blank"
+              aria-label="WhatsApp"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
           </div>
         </div>
         <div class="footer-creditos">
+          © 2026 Associação Amigos dos Animais · Todos os direitos reservados<br />
           Site desenvolvido por
           <a href="https://lrwebdesign.com.br" target="_blank">LR Web Design</a>
         </div>

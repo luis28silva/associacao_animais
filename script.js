@@ -32,3 +32,10 @@ navLinks.querySelectorAll('a').forEach(function (link) {
     btnMobile.setAttribute('aria-expanded', false);
   });
 });
+
+window.addEventListener("load", function () {
+  const preloader = document.getElementById("preloader");
+  setTimeout(function () {
+    preloader.classList.add("preloader-oculto");
+  }, 300);
+});
