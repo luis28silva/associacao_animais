@@ -6,7 +6,7 @@
   --verde-medio: #2e5240;
   --dourado: #d9a441; /* CTA principal */
   --coral: #e07856; /* seção doação, detalhe */
-  --creme: #fbf4e7; /* fundo geral */
+  --creme: #fbebca; /* fundo geral */
   --branco: #ffffff;
   --texto: #26302b;
   --texto-claro: #6b7a72;
@@ -266,33 +266,47 @@ nav {
   margin-top: 56px;
   flex-wrap: wrap;
 }
-.stat-num {
-  font-family: var(--fonte-display);
-  font-size: 2rem;
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.stat-item i{
+  color: var(--coral);
+}
+.stat-icon {
+  font-size: 1.8rem;
   color: var(--dourado);
-  font-weight: 700;
 }
 .stat-label {
-  font-size: 0.85rem;
-  color: #b7c4bb;
+  font-size: 0.95rem;
+  color: #dce6df;
+  font-weight: 600;
+  max-width: 120px;
 }
 
 /* =====================
    SOBRE
    ===================== */
-.sobre {
-  padding: 50px 0;
-  text-align: center;
-  background: #fcefcf;
-}
+
 .sobre h2 {
   font-size: 2.2rem;
   margin: 10px 0 24px;
 }
+.sobre {
+  padding: 70px 0;
+  text-align: center;
+  background: var(--creme);
+}
 .sobre p {
   color: var(--texto-claro);
   max-width: 700px;
-  margin: 0 auto 16px;
+  margin: 0 auto 20px;
+  text-align: left;
+  line-height: 1.7;
 }
 
 .passeio {
@@ -304,7 +318,7 @@ nav {
    EQUIPE
    ===================== */
 .equipe {
-   padding: 50px 0;
+  padding: 50px 0;
   text-align: center;
   background: color-mix(in srgb, var(--verde-medio) 8%, transparent);
 }
@@ -318,17 +332,18 @@ nav {
   margin: 0 auto 50px;
 }
 .equipe-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 20px;
 }
 .equipe-card {
-  width: 170px;
+  width: 100%;
+  max-width: 170px;
 }
 .foto-blob {
-  width: 160px;
-  height: 160px;
+  width: 190px;
+  height: 190px;
   margin: 0 auto 16px;
   position: relative;
 }
@@ -660,12 +675,12 @@ nav {
      ===================== */
 .contato {
   background: var(--branco);
-  padding: 100px 0;
+  padding: 50px 0;
 }
 .contato-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  gap: 24px;
 }
 .contato-info h2 {
   font-size: 2.2rem;
@@ -673,7 +688,7 @@ nav {
 }
 .contato-info p {
   color: var(--texto-claro);
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 .contato-canais {
   display: flex;
@@ -701,28 +716,33 @@ nav {
   font-size: 1.6rem;
 }
 
-form {
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  margin: 10px 0;
+  width: fit-content;
+}
+
+.btn-whatsapp i{
+  color: white;
+  font-size: 1.6rem;
+}
+
+.contato-imagem {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  justify-content: center;
 }
-input,
-textarea {
-  font-family: var(--fonte-corpo);
-  padding: 14px 16px;
-  border-radius: 10px;
-  border: 1.5px solid #e4dfd3;
-  background: var(--creme);
-  font-size: 0.95rem;
-}
-input:focus,
-textarea:focus {
-  outline: none;
-  border-color: var(--dourado);
-}
-textarea {
-  min-height: 120px;
-  resize: vertical;
+.contato-imagem img {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
 }
 
 /* =====================
@@ -786,7 +806,7 @@ footer {
      RESPONSIVO
      ===================== */
 @media (max-width: 860px) {
-    .quebra-mobile {
+  .quebra-mobile {
     display: block;
   }
 
@@ -849,6 +869,10 @@ footer {
   .faixa-passeio {
     overflow-x: auto;
   }
+  .equipe-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -900,12 +924,15 @@ footer {
     padding-right: 20px;
   }
   .sobre p {
-    text-align: justify;
+    text-align: left;
   }
 }
 
 @media (max-width: 560px) {
   .grid-animais {
+    grid-template-columns: 1fr;
+  }
+  .equipe-grid {
     grid-template-columns: 1fr;
   }
 }
