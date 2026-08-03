@@ -35,7 +35,9 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
 }
 #preloader.preloader-oculto {
   opacity: 0;
@@ -194,7 +196,6 @@ nav {
   color: var(--dourado);
 }
 
-
 /* =====================
      BOTÃO MOBILE
      ===================== */
@@ -274,7 +275,7 @@ nav {
   gap: 10px;
 }
 
-.stat-item i{
+.stat-item i {
   color: var(--coral);
 }
 .stat-icon {
@@ -387,7 +388,6 @@ nav {
   border-radius: 20px;
   background: #fff;
 }
-
 
 /* =====================
      ANIMAIS PARA ADOÇÃO
@@ -577,7 +577,9 @@ nav {
   border-radius: 999px;
   font-weight: 700;
   text-decoration: none;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 .btn-card-ajudar:hover {
   background: #f0c96b;
@@ -720,7 +722,7 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #25D366;
+  background: #25d366;
   color: #fff;
   padding: 14px 28px;
   border-radius: 50px;
@@ -729,7 +731,7 @@ nav {
   width: fit-content;
 }
 
-.btn-whatsapp i{
+.btn-whatsapp i {
   color: white;
   font-size: 1.6rem;
 }
@@ -927,23 +929,50 @@ footer {
     text-align: left;
   }
 }
-
 @media (max-width: 560px) {
   .grid-animais {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
-  .equipe-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
-/* acessibilidade: foco visível */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid var(--dourado);
-  outline-offset: 2px;
+  .grid-animais-completa {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .foto-blob {
+    width: 140px;
+    height: 140px;
+  }
+
+  .equipe-nome {
+    font-size: 0.85rem;
+  }
+
+  /* reduz conteúdo interno dos cards */
+  .card-info {
+    padding: 12px;
+  }
+
+  .tag-nome {
+    font-size: 0.85rem;
+    padding: 4px 10px;
+    margin-bottom: 8px;
+  }
+
+  .card-detalhes {
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  .pill {
+    font-size: 0.68rem;
+    padding: 3px 8px;
+  }
+
+  .card-animal .btn {
+    padding: 5px;
+    font-size: 0.7rem;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   * {
