@@ -2,7 +2,7 @@
      TOKENS — troque as cores/fontes aqui se quiser ajustar
      ===================================================== */
 :root {
-  --verde-escuro: #1f3a2e; /* headers, nav, footer */
+  --verde-escuro: #003220; /* headers, nav, footer */
   --verde-medio: #2e5240;
   --dourado: #d9a441; /* CTA principal */
   --coral: #e07856; /* seção doação, detalhe */
@@ -19,6 +19,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -772,16 +776,25 @@ footer {
 }
 .footer-social {
   display: flex;
-  gap: 16px;
+  gap: 14px;
 }
 .footer-social a {
-  width: 38px;
-  height: 38px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--dourado);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--dourado);
+  font-size: 1.15rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.footer-social a:hover {
+  background: var(--dourado);
+  color: var(--verde-escuro);
+  transform: translateY(-3px);
 }
 .footer-creditos {
   text-align: center;
