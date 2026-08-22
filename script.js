@@ -1,4 +1,7 @@
-  function copiarChavePix(){
+// =====================
+// BOTÃO COPIAR CHAVE PIX
+// =====================
+function copiarChavePix(){
       const chave = document.querySelector('.pix-chave').innerText;
       navigator.clipboard.writeText(chave).then(()=>{
         const btn = event.target;
@@ -8,7 +11,9 @@
       });
     }
 
-
+// =====================
+// MENU MOBILE (abrir/fechar)
+// =====================
     const btnMobile = document.getElementById('btn-mobile');
 const navLinks = document.getElementById('nav-links');
 
@@ -33,9 +38,54 @@ navLinks.querySelectorAll('a').forEach(function (link) {
   });
 });
 
+
+// =====================
+// PRELOADER (tela de carregamento)
+// =====================
 window.addEventListener("load", function () {
   const preloader = document.getElementById("preloader");
   setTimeout(function () {
     preloader.classList.add("preloader-oculto");
   }, 300);
+});
+
+
+
+// =====================
+// LIGHTBOX FOTOS ANIMAIS
+// =====================
+document.addEventListener("DOMContentLoaded", function () {
+  const overlay = document.getElementById("lightboxOverlay");
+  const imgEl = document.getElementById("lightboxImg");
+  const nomeEl = document.getElementById("lightboxNome");
+  const btnFechar = document.getElementById("lightboxFechar");
+
+  // clique em qualquer foto dentro de .card-foto (funciona pros 100 cards)
+  document.querySelectorAll(".card-foto img").forEach(function (img) {
+    img.addEventListener("click", function () {
+      const card = img.closest(".card-animal");
+      const nome = card ? card.querySelector(".tag-nome").textContent : "";
+
+      imgEl.src = img.src;
+      imgEl.alt = img.alt;
+      nomeEl.textContent = nome;
+      overlay.classList.add("ativo");
+    });
+  });
+
+  function fecharLightbox() {
+    overlay.classList.remove("ativo");
+  }
+
+  btnFechar.addEventListener("click", fecharLightbox);
+
+  // fecha clicando fora da foto
+  overlay.addEventListener("click", function (e) {
+    if (e.target === overlay) fecharLightbox();
+  });
+
+  // fecha com tecla ESC
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") fecharLightbox();
+  });
 });
