@@ -533,8 +533,8 @@ nav {
 
 .lightbox-conteudo {
   position: relative;
-  max-width: 600px;
-  width: 100%;
+  width: fit-content;
+  max-width: 90vw;
   background: var(--branco);
   border-radius: 18px;
   overflow: hidden;
@@ -553,12 +553,12 @@ nav {
 }
 
 .lightbox-conteudo img {
-  width: 100%;
-  height: auto;
-  max-height: 75vh;
-  object-fit: contain;
   display: block;
-  background: var(--verde-medio);
+  max-width: 90vw;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .lightbox-nome {
